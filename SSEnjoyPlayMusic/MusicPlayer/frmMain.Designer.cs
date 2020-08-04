@@ -283,6 +283,7 @@
             this.btn_next_song.TabIndex = 2;
             this.btn_next_song.TabStop = false;
             this.btn_next_song.Zoom = 10;
+            this.btn_next_song.Click += new System.EventHandler(this.btn_next_song_Click);
             // 
             // play
             // 
@@ -379,6 +380,7 @@
             this.btn_back_Song.TabIndex = 1;
             this.btn_back_Song.TabStop = false;
             this.btn_back_Song.Zoom = 10;
+            this.btn_back_Song.Click += new System.EventHandler(this.btn_back_Song_Click);
             // 
             // pause
             // 

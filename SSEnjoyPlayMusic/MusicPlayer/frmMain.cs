@@ -165,6 +165,28 @@ namespace MusicPlayer
             StopPlayer();
         }
 
+        private void btn_next_song_Click(object sender, EventArgs e)
+        {
+            if (Startindex == lbox_ListNhac.Items.Count -1)
+            {
+                Startindex = lbox_ListNhac.Items.Count - 1;
+            }
+            else if (Startindex < lbox_ListNhac.Items.Count)
+            {
+                Startindex = Startindex + 1;
+            }
+            playfile(Startindex);
+        }
+
+        private void btn_back_Song_Click(object sender, EventArgs e)
+        {
+            if (Startindex > 0)
+            {
+                Startindex = Startindex - 1;
+            }
+            playfile(Startindex);
+        }
+
         private void lbox_ListNhac_SelectedIndexChanged(object sender, EventArgs e)
         {
             Startindex = lbox_ListNhac.SelectedIndex;
