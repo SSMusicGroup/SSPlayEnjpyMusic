@@ -1,9 +1,0 @@
-D:\LEARN_IN_CLASS\SSPlayEnjpyMusic\SSMusicWindows\SSMusicWindows\bin\Debug\SSMusicWindows.exe.config
-D:\LEARN_IN_CLASS\SSPlayEnjpyMusic\SSMusicWindows\SSMusicWindows\bin\Debug\SSMusicWindows.exe
-D:\LEARN_IN_CLASS\SSPlayEnjpyMusic\SSMusicWindows\SSMusicWindows\bin\Debug\SSMusicWindows.pdb
-D:\LEARN_IN_CLASS\SSPlayEnjpyMusic\SSMusicWindows\SSMusicWindows\obj\Debug\SSMusicWindows.csprojResolveAssemblyReference.cache
-D:\LEARN_IN_CLASS\SSPlayEnjpyMusic\SSMusicWindows\SSMusicWindows\obj\Debug\SSMusicWindows.Main_UI.resources
-D:\LEARN_IN_CLASS\SSPlayEnjpyMusic\SSMusicWindows\SSMusicWindows\obj\Debug\SSMusicWindows.Properties.Resources.resources
-D:\LEARN_IN_CLASS\SSPlayEnjpyMusic\SSMusicWindows\SSMusicWindows\obj\Debug\SSMusicWindows.csproj.GenerateResource.Cache
-D:\LEARN_IN_CLASS\SSPlayEnjpyMusic\SSMusicWindows\SSMusicWindows\obj\Debug\SSMusicWindows.exe
-D:\LEARN_IN_CLASS\SSPlayEnjpyMusic\SSMusicWindows\SSMusicWindows\obj\Debug\SSMusicWindows.pdb
