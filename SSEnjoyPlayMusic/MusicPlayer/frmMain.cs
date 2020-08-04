@@ -23,11 +23,34 @@ namespace MusicPlayer
 
         bool _playing = false;
 
+        public bool isPlaying
+        {
+            get
+            {
+                return _playing;
+            }
+            set
+            {
+                _playing = value;
+                if (_playing)
+                {
+                    axWMP_main.Ctlcontrols.pause();
+                    btn_Action.Image = play.Image;
+                }
+                else
+                {
+                    axWMP_main.Ctlcontrols.play();
+                    btn_Action.Image = pause.Image;
+                }
+            }
+        }
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             Startindex = 0;
             playnext = false;
             StopPlayer();
+            bunifuSlider1.Value = 100;
         }
 
         public void StopPlayer()
@@ -68,10 +91,12 @@ namespace MusicPlayer
             if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
+                bunifuSlider1.Value = 100;
             }
             else
             {
                 this.WindowState = FormWindowState.Maximized;
+                bunifuSlider1.Value = 100;
             }
         }
 
@@ -91,6 +116,105 @@ namespace MusicPlayer
             axWMP_main.BringToFront();
         }
 
+        private void bunifuSlider1_ValueChanged(object sender, EventArgs e)
+        {
+            axWMP_main.settings.volume = bunifuSlider1.Value;
+            lbl_AmLuong.Text = bunifuSlider1.Value.ToString();
+            if (bunifuSlider1.Value == 0)
+            {
+                btn_AmLuong.Image = Image.FromFile(@"D:\\LEARN_IN_CLASS\\SSPlayEnjpyMusic\\Img\\Mute_100px.png");
+            }
+            else
+            {
+                btn_AmLuong.Image = Image.FromFile(@"D:\\LEARN_IN_CLASS\\SSPlayEnjpyMusic\\Img\\audio_100px.png");
+            }
+        }
+
+        private void btn_AmLuong_Click(object sender, EventArgs e)
+        {
+            if (bunifuSlider1.Value > 0)
+            {
+                btn_AmLuong.Image = Image.FromFile(@"D:\\LEARN_IN_CLASS\\SSPlayEnjpyMusic\\Img\\No Audio_100px.png");
+                axWMP_main.settings.volume = 0;
+            }
+        }
+
+        public EventHandler onAction = null;
+
+        private void btn_Action_Click(object sender, EventArgs e)
+        {
+            isPlaying = !isPlaying;
+            if (onAction != null)
+            {
+                onAction.Invoke(this, e);
+            }
+        }
+
+        private void pause_Click(object sender, EventArgs e)
+        {
+            axWMP_main.Ctlcontrols.pause();
+        }
+
+        private void play_Click(object sender, EventArgs e)
+        {
+            axWMP_main.Ctlcontrols.play();
+        }
+
+        private void btn_Stop_song_Click(object sender, EventArgs e)
+        {
+            StopPlayer();
+        }
+
+        private void btn_next_song_Click(object sender, EventArgs e)
+        {
+            if (Startindex == lbox_ListNhac.Items.Count -1)
+            {
+                Startindex = lbox_ListNhac.Items.Count - 1;
+            }
+            else if (Startindex < lbox_ListNhac.Items.Count)
+            {
+                Startindex = Startindex + 1;
+            }
+            playfile(Startindex);
+        }
+
+        private void btn_back_Song_Click(object sender, EventArgs e)
+        {
+            if (Startindex > 0)
+            {
+                Startindex = Startindex - 1;
+            }
+            playfile(Startindex);
+        }
+
+        private void time_song_Tick(object sender, EventArgs e)
+        {
+            lbl_time_start.Text = axWMP_main.Ctlcontrols.currentPositionString;
+            lbl_time_end.Text = axWMP_main.Ctlcontrols.currentItem.durationString.ToString();
+            if (axWMP_main.playState==WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                PB_Timer.Value = (int)axWMP_main.Ctlcontrols.currentPosition;
+            }
+        }
+
+        private void axWMP_main_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            if (axWMP_main.playState==WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                PB_Timer.MaximumValue = (int)axWMP_main.Ctlcontrols.currentItem.duration;
+                time_song.Start();
+            }
+            else if (axWMP_main.playState==WMPLib.WMPPlayState.wmppsPaused)
+            {
+                time_song.Stop();
+            }
+            else if (axWMP_main.playState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+                time_song.Stop();
+                PB_Timer.Value = 0;
+            }
+        }
+
         private void lbox_ListNhac_SelectedIndexChanged(object sender, EventArgs e)
         {
             Startindex = lbox_ListNhac.SelectedIndex;
@@ -107,8 +231,8 @@ namespace MusicPlayer
             openFD.Filter = "(*.mp3)|*.mp3|all files(*.*)|*.*";
             if (openFD.ShowDialog()==DialogResult.OK)
             {
-                Filename = new[] { openFD.SafeFileName };
-                Filepath = new[] { openFD.FileName };
+                Filename = openFD.SafeFileNames;
+                Filepath = openFD.FileNames;
                 for (int i = 0; i <= Filename.Length - 1; i++)
                 {
                     lbox_ListNhac.Items.Add(Filename[i]);

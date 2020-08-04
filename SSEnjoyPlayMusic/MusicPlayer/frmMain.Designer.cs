@@ -35,22 +35,26 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuProgressBar1 = new Bunifu.Framework.UI.BunifuProgressBar();
+            this.PB_Timer = new Bunifu.Framework.UI.BunifuProgressBar();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_time_start = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbl_time_end = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_next_song = new Bunifu.Framework.UI.BunifuImageButton();
+            this.play = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_Action = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_Stop_song = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton7 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_back_Song = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pause = new Bunifu.Framework.UI.BunifuImageButton();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_Name_Song = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSlider1 = new Bunifu.Framework.UI.BunifuSlider();
             this.lbl_AmLuong = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_AmLuong = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbox_ListNhac = new System.Windows.Forms.ListBox();
             this.axWMP_main = new AxWMPLib.AxWindowsMediaPlayer();
@@ -70,6 +74,7 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.time_song = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -77,14 +82,18 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_next_song)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.play)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Action)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Stop_song)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton7)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_back_Song)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pause)).BeginInit();
             this.tableLayoutPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_AmLuong)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWMP_main)).BeginInit();
             this.pn_menu.SuspendLayout();
@@ -158,7 +167,7 @@
             this.tableLayoutPanel7.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Controls.Add(this.bunifuProgressBar1, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.PB_Timer, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 0, 3);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel10, 0, 2);
@@ -173,19 +182,19 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(686, 193);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
-            // bunifuProgressBar1
+            // PB_Timer
             // 
-            this.bunifuProgressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuProgressBar1.BackColor = System.Drawing.Color.Silver;
-            this.bunifuProgressBar1.BorderRadius = 5;
-            this.bunifuProgressBar1.Location = new System.Drawing.Point(4, 8);
-            this.bunifuProgressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuProgressBar1.MaximumValue = 100;
-            this.bunifuProgressBar1.Name = "bunifuProgressBar1";
-            this.bunifuProgressBar1.ProgressColor = System.Drawing.Color.Teal;
-            this.bunifuProgressBar1.Size = new System.Drawing.Size(678, 12);
-            this.bunifuProgressBar1.TabIndex = 0;
-            this.bunifuProgressBar1.Value = 0;
+            this.PB_Timer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.PB_Timer.BackColor = System.Drawing.Color.Silver;
+            this.PB_Timer.BorderRadius = 5;
+            this.PB_Timer.Location = new System.Drawing.Point(4, 8);
+            this.PB_Timer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_Timer.MaximumValue = 100;
+            this.PB_Timer.Name = "PB_Timer";
+            this.PB_Timer.ProgressColor = System.Drawing.Color.Teal;
+            this.PB_Timer.Size = new System.Drawing.Size(678, 12);
+            this.PB_Timer.TabIndex = 0;
+            this.PB_Timer.Value = 0;
             // 
             // tableLayoutPanel8
             // 
@@ -232,18 +241,18 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.29412F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.558824F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel9.Controls.Add(this.bunifuImageButton2, 3, 0);
-            this.tableLayoutPanel9.Controls.Add(this.bunifuImageButton3, 2, 0);
-            this.tableLayoutPanel9.Controls.Add(this.bunifuImageButton4, 4, 0);
+            this.tableLayoutPanel9.Controls.Add(this.panel3, 4, 0);
+            this.tableLayoutPanel9.Controls.Add(this.btn_Action, 3, 0);
             this.tableLayoutPanel9.Controls.Add(this.bunifuImageButton5, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.bunifuImageButton6, 5, 0);
+            this.tableLayoutPanel9.Controls.Add(this.btn_Stop_song, 5, 0);
             this.tableLayoutPanel9.Controls.Add(this.bunifuImageButton7, 6, 0);
+            this.tableLayoutPanel9.Controls.Add(this.panel2, 2, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 126);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -252,47 +261,59 @@
             this.tableLayoutPanel9.Size = new System.Drawing.Size(680, 64);
             this.tableLayoutPanel9.TabIndex = 3;
             // 
-            // bunifuImageButton2
+            // panel3
             // 
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(275, 3);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(62, 58);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 0;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
+            this.panel3.Controls.Add(this.btn_next_song);
+            this.panel3.Controls.Add(this.play);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(345, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(59, 58);
+            this.panel3.TabIndex = 7;
             // 
-            // bunifuImageButton3
+            // btn_next_song
             // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(207, 3);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(62, 58);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton3.TabIndex = 1;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
+            this.btn_next_song.BackColor = System.Drawing.Color.Transparent;
+            this.btn_next_song.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_next_song.Image = ((System.Drawing.Image)(resources.GetObject("btn_next_song.Image")));
+            this.btn_next_song.ImageActive = null;
+            this.btn_next_song.Location = new System.Drawing.Point(0, 0);
+            this.btn_next_song.Name = "btn_next_song";
+            this.btn_next_song.Size = new System.Drawing.Size(59, 58);
+            this.btn_next_song.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_next_song.TabIndex = 2;
+            this.btn_next_song.TabStop = false;
+            this.btn_next_song.Zoom = 10;
+            this.btn_next_song.Click += new System.EventHandler(this.btn_next_song_Click);
             // 
-            // bunifuImageButton4
+            // play
             // 
-            this.bunifuImageButton4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(343, 3);
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Size = new System.Drawing.Size(62, 58);
-            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton4.TabIndex = 2;
-            this.bunifuImageButton4.TabStop = false;
-            this.bunifuImageButton4.Zoom = 10;
+            this.play.BackColor = System.Drawing.Color.Transparent;
+            this.play.Image = ((System.Drawing.Image)(resources.GetObject("play.Image")));
+            this.play.ImageActive = null;
+            this.play.Location = new System.Drawing.Point(3, 10);
+            this.play.Name = "play";
+            this.play.Size = new System.Drawing.Size(49, 41);
+            this.play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.play.TabIndex = 1;
+            this.play.TabStop = false;
+            this.play.Zoom = 10;
+            this.play.Click += new System.EventHandler(this.play_Click);
+            // 
+            // btn_Action
+            // 
+            this.btn_Action.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Action.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Action.Image = ((System.Drawing.Image)(resources.GetObject("btn_Action.Image")));
+            this.btn_Action.ImageActive = null;
+            this.btn_Action.Location = new System.Drawing.Point(275, 3);
+            this.btn_Action.Name = "btn_Action";
+            this.btn_Action.Size = new System.Drawing.Size(64, 58);
+            this.btn_Action.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Action.TabIndex = 0;
+            this.btn_Action.TabStop = false;
+            this.btn_Action.Zoom = 10;
+            this.btn_Action.Click += new System.EventHandler(this.btn_Action_Click);
             // 
             // bunifuImageButton5
             // 
@@ -308,19 +329,20 @@
             this.bunifuImageButton5.TabStop = false;
             this.bunifuImageButton5.Zoom = 10;
             // 
-            // bunifuImageButton6
+            // btn_Stop_song
             // 
-            this.bunifuImageButton6.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.Image")));
-            this.bunifuImageButton6.ImageActive = null;
-            this.bunifuImageButton6.Location = new System.Drawing.Point(411, 3);
-            this.bunifuImageButton6.Name = "bunifuImageButton6";
-            this.bunifuImageButton6.Size = new System.Drawing.Size(62, 58);
-            this.bunifuImageButton6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton6.TabIndex = 4;
-            this.bunifuImageButton6.TabStop = false;
-            this.bunifuImageButton6.Zoom = 10;
+            this.btn_Stop_song.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Stop_song.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Stop_song.Image = ((System.Drawing.Image)(resources.GetObject("btn_Stop_song.Image")));
+            this.btn_Stop_song.ImageActive = null;
+            this.btn_Stop_song.Location = new System.Drawing.Point(410, 3);
+            this.btn_Stop_song.Name = "btn_Stop_song";
+            this.btn_Stop_song.Size = new System.Drawing.Size(62, 58);
+            this.btn_Stop_song.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Stop_song.TabIndex = 4;
+            this.btn_Stop_song.TabStop = false;
+            this.btn_Stop_song.Zoom = 10;
+            this.btn_Stop_song.Click += new System.EventHandler(this.btn_Stop_song_Click);
             // 
             // bunifuImageButton7
             // 
@@ -328,13 +350,52 @@
             this.bunifuImageButton7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuImageButton7.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton7.Image")));
             this.bunifuImageButton7.ImageActive = null;
-            this.bunifuImageButton7.Location = new System.Drawing.Point(479, 3);
+            this.bunifuImageButton7.Location = new System.Drawing.Point(478, 3);
             this.bunifuImageButton7.Name = "bunifuImageButton7";
             this.bunifuImageButton7.Size = new System.Drawing.Size(62, 58);
             this.bunifuImageButton7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton7.TabIndex = 5;
             this.bunifuImageButton7.TabStop = false;
             this.bunifuImageButton7.Zoom = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_back_Song);
+            this.panel2.Controls.Add(this.pause);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(207, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(62, 58);
+            this.panel2.TabIndex = 6;
+            // 
+            // btn_back_Song
+            // 
+            this.btn_back_Song.BackColor = System.Drawing.Color.Transparent;
+            this.btn_back_Song.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_back_Song.Image = ((System.Drawing.Image)(resources.GetObject("btn_back_Song.Image")));
+            this.btn_back_Song.ImageActive = null;
+            this.btn_back_Song.Location = new System.Drawing.Point(0, 0);
+            this.btn_back_Song.Name = "btn_back_Song";
+            this.btn_back_Song.Size = new System.Drawing.Size(62, 58);
+            this.btn_back_Song.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_back_Song.TabIndex = 1;
+            this.btn_back_Song.TabStop = false;
+            this.btn_back_Song.Zoom = 10;
+            this.btn_back_Song.Click += new System.EventHandler(this.btn_back_Song_Click);
+            // 
+            // pause
+            // 
+            this.pause.BackColor = System.Drawing.Color.Transparent;
+            this.pause.Image = ((System.Drawing.Image)(resources.GetObject("pause.Image")));
+            this.pause.ImageActive = null;
+            this.pause.Location = new System.Drawing.Point(0, 15);
+            this.pause.Name = "pause";
+            this.pause.Size = new System.Drawing.Size(59, 26);
+            this.pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pause.TabIndex = 1;
+            this.pause.TabStop = false;
+            this.pause.Zoom = 10;
+            this.pause.Click += new System.EventHandler(this.pause_Click);
             // 
             // tableLayoutPanel10
             // 
@@ -346,7 +407,7 @@
             this.tableLayoutPanel10.Controls.Add(this.lbl_Name_Song, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.bunifuSlider1, 2, 0);
             this.tableLayoutPanel10.Controls.Add(this.lbl_AmLuong, 3, 0);
-            this.tableLayoutPanel10.Controls.Add(this.bunifuImageButton1, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btn_AmLuong, 1, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 69);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -379,6 +440,7 @@
             this.bunifuSlider1.Size = new System.Drawing.Size(162, 35);
             this.bunifuSlider1.TabIndex = 1;
             this.bunifuSlider1.Value = 0;
+            this.bunifuSlider1.ValueChanged += new System.EventHandler(this.bunifuSlider1_ValueChanged);
             // 
             // lbl_AmLuong
             // 
@@ -391,19 +453,20 @@
             this.lbl_AmLuong.TabIndex = 2;
             this.lbl_AmLuong.Text = "100";
             // 
-            // bunifuImageButton1
+            // btn_AmLuong
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(397, 3);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(62, 45);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 3;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 100;
+            this.btn_AmLuong.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AmLuong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_AmLuong.Image = ((System.Drawing.Image)(resources.GetObject("btn_AmLuong.Image")));
+            this.btn_AmLuong.ImageActive = null;
+            this.btn_AmLuong.Location = new System.Drawing.Point(397, 3);
+            this.btn_AmLuong.Name = "btn_AmLuong";
+            this.btn_AmLuong.Size = new System.Drawing.Size(62, 45);
+            this.btn_AmLuong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_AmLuong.TabIndex = 3;
+            this.btn_AmLuong.TabStop = false;
+            this.btn_AmLuong.Zoom = 100;
+            this.btn_AmLuong.Click += new System.EventHandler(this.btn_AmLuong_Click);
             // 
             // panel1
             // 
@@ -417,10 +480,10 @@
             // 
             // lbox_ListNhac
             // 
-            this.lbox_ListNhac.BackColor = System.Drawing.Color.White;
+            this.lbox_ListNhac.BackColor = System.Drawing.Color.Black;
             this.lbox_ListNhac.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbox_ListNhac.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbox_ListNhac.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbox_ListNhac.ForeColor = System.Drawing.Color.White;
             this.lbox_ListNhac.FormattingEnabled = true;
             this.lbox_ListNhac.ItemHeight = 20;
             this.lbox_ListNhac.Location = new System.Drawing.Point(0, 0);
@@ -439,6 +502,7 @@
             this.axWMP_main.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWMP_main.OcxState")));
             this.axWMP_main.Size = new System.Drawing.Size(686, 363);
             this.axWMP_main.TabIndex = 0;
+            this.axWMP_main.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWMP_main_PlayStateChange);
             // 
             // pn_menu
             // 
@@ -722,6 +786,10 @@
             this.bunifuDragControl3.TargetControl = this.tableLayoutPanel5;
             this.bunifuDragControl3.Vertical = true;
             // 
+            // time_song
+            // 
+            this.time_song.Tick += new System.EventHandler(this.time_song_Tick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -741,15 +809,19 @@
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_next_song)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.play)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Action)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Stop_song)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton7)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_back_Song)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pause)).EndInit();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_AmLuong)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axWMP_main)).EndInit();
             this.pn_menu.ResumeLayout(false);
@@ -788,7 +860,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_Max;
         private Bunifu.Framework.UI.BunifuImageButton btn_Close;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private Bunifu.Framework.UI.BunifuProgressBar bunifuProgressBar1;
+        private Bunifu.Framework.UI.BunifuProgressBar PB_Timer;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl_time_start;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl_time_end;
@@ -797,15 +869,20 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lbl_Name_Song;
         private Bunifu.Framework.UI.BunifuSlider bunifuSlider1;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl_AmLuong;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
+        private Bunifu.Framework.UI.BunifuImageButton btn_AmLuong;
+        private Bunifu.Framework.UI.BunifuImageButton btn_Action;
+        private Bunifu.Framework.UI.BunifuImageButton btn_back_Song;
+        private Bunifu.Framework.UI.BunifuImageButton btn_next_song;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton5;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton6;
+        private Bunifu.Framework.UI.BunifuImageButton btn_Stop_song;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton7;
         private System.Windows.Forms.Panel panel1;
         private AxWMPLib.AxWindowsMediaPlayer axWMP_main;
         private System.Windows.Forms.ListBox lbox_ListNhac;
+        private System.Windows.Forms.Panel panel3;
+        private Bunifu.Framework.UI.BunifuImageButton play;
+        private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuImageButton pause;
+        private System.Windows.Forms.Timer time_song;
     }
 }
