@@ -187,6 +187,34 @@ namespace MusicPlayer
             playfile(Startindex);
         }
 
+        private void time_song_Tick(object sender, EventArgs e)
+        {
+            lbl_time_start.Text = axWMP_main.Ctlcontrols.currentPositionString;
+            lbl_time_end.Text = axWMP_main.Ctlcontrols.currentItem.durationString.ToString();
+            if (axWMP_main.playState==WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                PB_Timer.Value = (int)axWMP_main.Ctlcontrols.currentPosition;
+            }
+        }
+
+        private void axWMP_main_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            if (axWMP_main.playState==WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                PB_Timer.MaximumValue = (int)axWMP_main.Ctlcontrols.currentItem.duration;
+                time_song.Start();
+            }
+            else if (axWMP_main.playState==WMPLib.WMPPlayState.wmppsPaused)
+            {
+                time_song.Stop();
+            }
+            else if (axWMP_main.playState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+                time_song.Stop();
+                PB_Timer.Value = 0;
+            }
+        }
+
         private void lbox_ListNhac_SelectedIndexChanged(object sender, EventArgs e)
         {
             Startindex = lbox_ListNhac.SelectedIndex;

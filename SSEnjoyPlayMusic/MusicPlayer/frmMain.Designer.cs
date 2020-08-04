@@ -35,7 +35,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuProgressBar1 = new Bunifu.Framework.UI.BunifuProgressBar();
+            this.PB_Timer = new Bunifu.Framework.UI.BunifuProgressBar();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_time_start = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbl_time_end = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -74,6 +74,7 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.time_song = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -166,7 +167,7 @@
             this.tableLayoutPanel7.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Controls.Add(this.bunifuProgressBar1, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.PB_Timer, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 0, 3);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel10, 0, 2);
@@ -181,19 +182,19 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(686, 193);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
-            // bunifuProgressBar1
+            // PB_Timer
             // 
-            this.bunifuProgressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuProgressBar1.BackColor = System.Drawing.Color.Silver;
-            this.bunifuProgressBar1.BorderRadius = 5;
-            this.bunifuProgressBar1.Location = new System.Drawing.Point(4, 8);
-            this.bunifuProgressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuProgressBar1.MaximumValue = 100;
-            this.bunifuProgressBar1.Name = "bunifuProgressBar1";
-            this.bunifuProgressBar1.ProgressColor = System.Drawing.Color.Teal;
-            this.bunifuProgressBar1.Size = new System.Drawing.Size(678, 12);
-            this.bunifuProgressBar1.TabIndex = 0;
-            this.bunifuProgressBar1.Value = 0;
+            this.PB_Timer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.PB_Timer.BackColor = System.Drawing.Color.Silver;
+            this.PB_Timer.BorderRadius = 5;
+            this.PB_Timer.Location = new System.Drawing.Point(4, 8);
+            this.PB_Timer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PB_Timer.MaximumValue = 100;
+            this.PB_Timer.Name = "PB_Timer";
+            this.PB_Timer.ProgressColor = System.Drawing.Color.Teal;
+            this.PB_Timer.Size = new System.Drawing.Size(678, 12);
+            this.PB_Timer.TabIndex = 0;
+            this.PB_Timer.Value = 0;
             // 
             // tableLayoutPanel8
             // 
@@ -501,6 +502,7 @@
             this.axWMP_main.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWMP_main.OcxState")));
             this.axWMP_main.Size = new System.Drawing.Size(686, 363);
             this.axWMP_main.TabIndex = 0;
+            this.axWMP_main.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWMP_main_PlayStateChange);
             // 
             // pn_menu
             // 
@@ -784,6 +786,10 @@
             this.bunifuDragControl3.TargetControl = this.tableLayoutPanel5;
             this.bunifuDragControl3.Vertical = true;
             // 
+            // time_song
+            // 
+            this.time_song.Tick += new System.EventHandler(this.time_song_Tick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -854,7 +860,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_Max;
         private Bunifu.Framework.UI.BunifuImageButton btn_Close;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private Bunifu.Framework.UI.BunifuProgressBar bunifuProgressBar1;
+        private Bunifu.Framework.UI.BunifuProgressBar PB_Timer;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl_time_start;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl_time_end;
@@ -877,5 +883,6 @@
         private Bunifu.Framework.UI.BunifuImageButton play;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuImageButton pause;
+        private System.Windows.Forms.Timer time_song;
     }
 }
