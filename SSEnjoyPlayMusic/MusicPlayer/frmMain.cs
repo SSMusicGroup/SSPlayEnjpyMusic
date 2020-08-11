@@ -51,6 +51,11 @@ namespace MusicPlayer
             playnext = false;
             StopPlayer();
             bunifuSlider1.Value = 100;
+            string path = @"E:\♪ Đường Một Chiều ‣ Những Bản Acoustic Hay Nhất Về Tình Yêu Đơn Phương Thầm Lặng.mp3";
+            axWMP_main.settings.autoStart = true;
+            axWMP_main.URL = path;
+            axWMP_main.Ctlcontrols.next();
+            axWMP_main.Ctlcontrols.play();
         }
 
         public void StopPlayer()
