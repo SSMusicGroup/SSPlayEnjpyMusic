@@ -36,6 +36,9 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="DAL_BLL">
+      <HintPath>..\DAL_BLL\bin\Debug\DAL_BLL.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,31 +54,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCaSi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCaSi.Designer.cs">
+      <DependentUpon>frmCaSi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlayList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlayList.Designer.cs">
+      <DependentUpon>frmPlayList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCaSi.resx">
+      <DependentUpon>frmCaSi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPlayList.resx">
+      <DependentUpon>frmPlayList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -106,6 +127,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\music_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\audio_100px.png" />
+    <Content Include="Image\available_updates_100px.png" />
+    <Content Include="Image\back_to_100px.png" />
+    <Content Include="Image\cancel_48px.png" />
+    <Content Include="Image\checklist_100px.png" />
+    <Content Include="Image\close_window_100px.png" />
+    <Content Include="Image\folder_100px.png" />
+    <Content Include="Image\info_50px.png" />
+    <Content Include="Image\list_50px.png" />
+    <Content Include="Image\list_80px.png" />
+    <Content Include="Image\maximize_window_100px.png" />
+    <Content Include="Image\minimize_window_100px.png" />
+    <Content Include="Image\music_100px.png" />
+    <Content Include="Image\Mute_100px.png" />
+    <Content Include="Image\next.png" />
+    <Content Include="Image\No Audio_100px.png" />
+    <Content Include="Image\ok_48px.png" />
+    <Content Include="Image\pause_100px.png" />
+    <Content Include="Image\play_100px.png" />
+    <Content Include="Image\play_button_100px.png" />
+    <Content Include="Image\shuffle_100px.png" />
+    <Content Include="Image\skip_to_start_100px.png" />
+    <Content Include="Image\stop_100px.png" />
+    <None Include="Resources\edit_user_100px.png" />
+    <None Include="Resources\music_folder_100px.png" />
+    <None Include="Resources\Image_Music.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -63,6 +63,8 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_Casi = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_BaiHat = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_PlayList = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_NowPlay = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_Browser = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -195,6 +197,7 @@
             this.PB_Timer.Size = new System.Drawing.Size(678, 12);
             this.PB_Timer.TabIndex = 0;
             this.PB_Timer.Value = 0;
+            this.PB_Timer.progressChanged += new System.EventHandler(this.PB_Timer_progressChanged);
             // 
             // tableLayoutPanel8
             // 
@@ -275,7 +278,7 @@
             // 
             this.btn_next_song.BackColor = System.Drawing.Color.Transparent;
             this.btn_next_song.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_next_song.Image = ((System.Drawing.Image)(resources.GetObject("btn_next_song.Image")));
+            this.btn_next_song.Image = global::MusicPlayer.Properties.Resources.next;
             this.btn_next_song.ImageActive = null;
             this.btn_next_song.Location = new System.Drawing.Point(0, 0);
             this.btn_next_song.Name = "btn_next_song";
@@ -289,7 +292,7 @@
             // play
             // 
             this.play.BackColor = System.Drawing.Color.Transparent;
-            this.play.Image = ((System.Drawing.Image)(resources.GetObject("play.Image")));
+            this.play.Image = global::MusicPlayer.Properties.Resources.pause_100px;
             this.play.ImageActive = null;
             this.play.Location = new System.Drawing.Point(3, 10);
             this.play.Name = "play";
@@ -304,7 +307,7 @@
             // 
             this.btn_Action.BackColor = System.Drawing.Color.Transparent;
             this.btn_Action.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Action.Image = ((System.Drawing.Image)(resources.GetObject("btn_Action.Image")));
+            this.btn_Action.Image = global::MusicPlayer.Properties.Resources.pause_100px;
             this.btn_Action.ImageActive = null;
             this.btn_Action.Location = new System.Drawing.Point(275, 3);
             this.btn_Action.Name = "btn_Action";
@@ -319,7 +322,7 @@
             // 
             this.bunifuImageButton5.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.Image")));
+            this.bunifuImageButton5.Image = global::MusicPlayer.Properties.Resources.shuffle_100px;
             this.bunifuImageButton5.ImageActive = null;
             this.bunifuImageButton5.Location = new System.Drawing.Point(139, 3);
             this.bunifuImageButton5.Name = "bunifuImageButton5";
@@ -333,7 +336,7 @@
             // 
             this.btn_Stop_song.BackColor = System.Drawing.Color.Transparent;
             this.btn_Stop_song.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Stop_song.Image = ((System.Drawing.Image)(resources.GetObject("btn_Stop_song.Image")));
+            this.btn_Stop_song.Image = global::MusicPlayer.Properties.Resources.stop_100px;
             this.btn_Stop_song.ImageActive = null;
             this.btn_Stop_song.Location = new System.Drawing.Point(410, 3);
             this.btn_Stop_song.Name = "btn_Stop_song";
@@ -348,7 +351,7 @@
             // 
             this.bunifuImageButton7.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuImageButton7.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton7.Image")));
+            this.bunifuImageButton7.Image = global::MusicPlayer.Properties.Resources.available_updates_100px;
             this.bunifuImageButton7.ImageActive = null;
             this.bunifuImageButton7.Location = new System.Drawing.Point(478, 3);
             this.bunifuImageButton7.Name = "bunifuImageButton7";
@@ -372,7 +375,7 @@
             // 
             this.btn_back_Song.BackColor = System.Drawing.Color.Transparent;
             this.btn_back_Song.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_back_Song.Image = ((System.Drawing.Image)(resources.GetObject("btn_back_Song.Image")));
+            this.btn_back_Song.Image = global::MusicPlayer.Properties.Resources.back_to_100px;
             this.btn_back_Song.ImageActive = null;
             this.btn_back_Song.Location = new System.Drawing.Point(0, 0);
             this.btn_back_Song.Name = "btn_back_Song";
@@ -386,11 +389,11 @@
             // pause
             // 
             this.pause.BackColor = System.Drawing.Color.Transparent;
-            this.pause.Image = ((System.Drawing.Image)(resources.GetObject("pause.Image")));
+            this.pause.Image = global::MusicPlayer.Properties.Resources.play_100px;
             this.pause.ImageActive = null;
-            this.pause.Location = new System.Drawing.Point(0, 15);
+            this.pause.Location = new System.Drawing.Point(0, 7);
             this.pause.Name = "pause";
-            this.pause.Size = new System.Drawing.Size(59, 26);
+            this.pause.Size = new System.Drawing.Size(59, 44);
             this.pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pause.TabIndex = 1;
             this.pause.TabStop = false;
@@ -457,7 +460,7 @@
             // 
             this.btn_AmLuong.BackColor = System.Drawing.Color.Transparent;
             this.btn_AmLuong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_AmLuong.Image = ((System.Drawing.Image)(resources.GetObject("btn_AmLuong.Image")));
+            this.btn_AmLuong.Image = global::MusicPlayer.Properties.Resources.audio_100px;
             this.btn_AmLuong.ImageActive = null;
             this.btn_AmLuong.Location = new System.Drawing.Point(397, 3);
             this.btn_AmLuong.Name = "btn_AmLuong";
@@ -489,7 +492,7 @@
             this.lbox_ListNhac.Location = new System.Drawing.Point(0, 0);
             this.lbox_ListNhac.MultiColumn = true;
             this.lbox_ListNhac.Name = "lbox_ListNhac";
-            this.lbox_ListNhac.Size = new System.Drawing.Size(686, 300);
+            this.lbox_ListNhac.Size = new System.Drawing.Size(686, 220);
             this.lbox_ListNhac.TabIndex = 1;
             this.lbox_ListNhac.SelectedIndexChanged += new System.EventHandler(this.lbox_ListNhac_SelectedIndexChanged);
             // 
@@ -535,8 +538,8 @@
             this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(293, 568);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
@@ -571,18 +574,98 @@
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.btn_PlayList, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.btn_NowPlay, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.btn_Browser, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.btn_Casi, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.btn_BaiHat, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btn_PlayList, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.btn_NowPlay, 0, 3);
+            this.tableLayoutPanel6.Controls.Add(this.btn_Browser, 0, 4);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 399);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 285);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 3;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(287, 166);
+            this.tableLayoutPanel6.RowCount = 5;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(287, 280);
             this.tableLayoutPanel6.TabIndex = 3;
+            // 
+            // btn_Casi
+            // 
+            this.btn_Casi.Activecolor = System.Drawing.Color.Blue;
+            this.btn_Casi.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Casi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Casi.BorderRadius = 0;
+            this.btn_Casi.ButtonText = "Ca sĩ";
+            this.btn_Casi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Casi.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_Casi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Casi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Casi.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Casi.Iconimage = global::MusicPlayer.Properties.Resources.edit_user_100px;
+            this.btn_Casi.Iconimage_right = null;
+            this.btn_Casi.Iconimage_right_Selected = null;
+            this.btn_Casi.Iconimage_Selected = null;
+            this.btn_Casi.IconMarginLeft = 0;
+            this.btn_Casi.IconMarginRight = 0;
+            this.btn_Casi.IconRightVisible = true;
+            this.btn_Casi.IconRightZoom = 0D;
+            this.btn_Casi.IconVisible = true;
+            this.btn_Casi.IconZoom = 90D;
+            this.btn_Casi.IsTab = false;
+            this.btn_Casi.Location = new System.Drawing.Point(4, 60);
+            this.btn_Casi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Casi.Name = "btn_Casi";
+            this.btn_Casi.Normalcolor = System.Drawing.Color.Transparent;
+            this.btn_Casi.OnHovercolor = System.Drawing.Color.MidnightBlue;
+            this.btn_Casi.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btn_Casi.selected = false;
+            this.btn_Casi.Size = new System.Drawing.Size(279, 48);
+            this.btn_Casi.TabIndex = 4;
+            this.btn_Casi.Text = "Ca sĩ";
+            this.btn_Casi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Casi.Textcolor = System.Drawing.Color.White;
+            this.btn_Casi.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Casi.Click += new System.EventHandler(this.btn_Casi_Click);
+            // 
+            // btn_BaiHat
+            // 
+            this.btn_BaiHat.Activecolor = System.Drawing.Color.Blue;
+            this.btn_BaiHat.BackColor = System.Drawing.Color.Transparent;
+            this.btn_BaiHat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_BaiHat.BorderRadius = 0;
+            this.btn_BaiHat.ButtonText = "Bài hát";
+            this.btn_BaiHat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_BaiHat.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_BaiHat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_BaiHat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BaiHat.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_BaiHat.Iconimage = global::MusicPlayer.Properties.Resources.music_folder_100px;
+            this.btn_BaiHat.Iconimage_right = null;
+            this.btn_BaiHat.Iconimage_right_Selected = null;
+            this.btn_BaiHat.Iconimage_Selected = null;
+            this.btn_BaiHat.IconMarginLeft = 0;
+            this.btn_BaiHat.IconMarginRight = 0;
+            this.btn_BaiHat.IconRightVisible = true;
+            this.btn_BaiHat.IconRightZoom = 0D;
+            this.btn_BaiHat.IconVisible = true;
+            this.btn_BaiHat.IconZoom = 90D;
+            this.btn_BaiHat.IsTab = false;
+            this.btn_BaiHat.Location = new System.Drawing.Point(4, 4);
+            this.btn_BaiHat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_BaiHat.Name = "btn_BaiHat";
+            this.btn_BaiHat.Normalcolor = System.Drawing.Color.Transparent;
+            this.btn_BaiHat.OnHovercolor = System.Drawing.Color.MidnightBlue;
+            this.btn_BaiHat.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btn_BaiHat.selected = false;
+            this.btn_BaiHat.Size = new System.Drawing.Size(279, 48);
+            this.btn_BaiHat.TabIndex = 3;
+            this.btn_BaiHat.Text = "Bài hát";
+            this.btn_BaiHat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_BaiHat.Textcolor = System.Drawing.Color.White;
+            this.btn_BaiHat.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BaiHat.Click += new System.EventHandler(this.btn_BaiHat_Click);
             // 
             // btn_PlayList
             // 
@@ -590,13 +673,13 @@
             this.btn_PlayList.BackColor = System.Drawing.Color.Transparent;
             this.btn_PlayList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_PlayList.BorderRadius = 0;
-            this.btn_PlayList.ButtonText = "Play List";
+            this.btn_PlayList.ButtonText = "Danh sách";
             this.btn_PlayList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_PlayList.DisabledColor = System.Drawing.Color.Gray;
             this.btn_PlayList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_PlayList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_PlayList.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_PlayList.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_PlayList.Iconimage")));
+            this.btn_PlayList.Iconimage = global::MusicPlayer.Properties.Resources.checklist_100px;
             this.btn_PlayList.Iconimage_right = null;
             this.btn_PlayList.Iconimage_right_Selected = null;
             this.btn_PlayList.Iconimage_Selected = null;
@@ -607,16 +690,16 @@
             this.btn_PlayList.IconVisible = true;
             this.btn_PlayList.IconZoom = 90D;
             this.btn_PlayList.IsTab = false;
-            this.btn_PlayList.Location = new System.Drawing.Point(4, 4);
+            this.btn_PlayList.Location = new System.Drawing.Point(4, 116);
             this.btn_PlayList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_PlayList.Name = "btn_PlayList";
             this.btn_PlayList.Normalcolor = System.Drawing.Color.Transparent;
             this.btn_PlayList.OnHovercolor = System.Drawing.Color.MidnightBlue;
             this.btn_PlayList.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_PlayList.selected = false;
-            this.btn_PlayList.Size = new System.Drawing.Size(279, 46);
+            this.btn_PlayList.Size = new System.Drawing.Size(279, 48);
             this.btn_PlayList.TabIndex = 0;
-            this.btn_PlayList.Text = "Play List";
+            this.btn_PlayList.Text = "Danh sách";
             this.btn_PlayList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_PlayList.Textcolor = System.Drawing.Color.White;
             this.btn_PlayList.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -628,7 +711,7 @@
             this.btn_NowPlay.BackColor = System.Drawing.Color.Transparent;
             this.btn_NowPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_NowPlay.BorderRadius = 0;
-            this.btn_NowPlay.ButtonText = "Now Play";
+            this.btn_NowPlay.ButtonText = "Đang phát";
             this.btn_NowPlay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_NowPlay.DisabledColor = System.Drawing.Color.Gray;
             this.btn_NowPlay.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -645,16 +728,16 @@
             this.btn_NowPlay.IconVisible = true;
             this.btn_NowPlay.IconZoom = 90D;
             this.btn_NowPlay.IsTab = false;
-            this.btn_NowPlay.Location = new System.Drawing.Point(4, 58);
+            this.btn_NowPlay.Location = new System.Drawing.Point(4, 172);
             this.btn_NowPlay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_NowPlay.Name = "btn_NowPlay";
             this.btn_NowPlay.Normalcolor = System.Drawing.Color.Transparent;
             this.btn_NowPlay.OnHovercolor = System.Drawing.Color.MidnightBlue;
             this.btn_NowPlay.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_NowPlay.selected = false;
-            this.btn_NowPlay.Size = new System.Drawing.Size(279, 46);
+            this.btn_NowPlay.Size = new System.Drawing.Size(279, 48);
             this.btn_NowPlay.TabIndex = 1;
-            this.btn_NowPlay.Text = "Now Play";
+            this.btn_NowPlay.Text = "Đang phát";
             this.btn_NowPlay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_NowPlay.Textcolor = System.Drawing.Color.White;
             this.btn_NowPlay.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -666,13 +749,13 @@
             this.btn_Browser.BackColor = System.Drawing.Color.Transparent;
             this.btn_Browser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Browser.BorderRadius = 0;
-            this.btn_Browser.ButtonText = "Browser";
+            this.btn_Browser.ButtonText = "Thư mục";
             this.btn_Browser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Browser.DisabledColor = System.Drawing.Color.Gray;
             this.btn_Browser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Browser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Browser.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_Browser.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Browser.Iconimage")));
+            this.btn_Browser.Iconimage = global::MusicPlayer.Properties.Resources.folder_100px;
             this.btn_Browser.Iconimage_right = null;
             this.btn_Browser.Iconimage_right_Selected = null;
             this.btn_Browser.Iconimage_Selected = null;
@@ -683,16 +766,16 @@
             this.btn_Browser.IconVisible = true;
             this.btn_Browser.IconZoom = 90D;
             this.btn_Browser.IsTab = false;
-            this.btn_Browser.Location = new System.Drawing.Point(4, 112);
+            this.btn_Browser.Location = new System.Drawing.Point(4, 228);
             this.btn_Browser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Browser.Name = "btn_Browser";
             this.btn_Browser.Normalcolor = System.Drawing.Color.Transparent;
             this.btn_Browser.OnHovercolor = System.Drawing.Color.MidnightBlue;
             this.btn_Browser.OnHoverTextColor = System.Drawing.Color.Black;
             this.btn_Browser.selected = false;
-            this.btn_Browser.Size = new System.Drawing.Size(279, 50);
+            this.btn_Browser.Size = new System.Drawing.Size(279, 48);
             this.btn_Browser.TabIndex = 2;
-            this.btn_Browser.Text = "Browser";
+            this.btn_Browser.Text = "Thư mục";
             this.btn_Browser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Browser.Textcolor = System.Drawing.Color.White;
             this.btn_Browser.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -719,7 +802,7 @@
             // 
             this.btn_Min.BackColor = System.Drawing.Color.Transparent;
             this.btn_Min.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Min.Image = ((System.Drawing.Image)(resources.GetObject("btn_Min.Image")));
+            this.btn_Min.Image = global::MusicPlayer.Properties.Resources.minimize_window_100px;
             this.btn_Min.ImageActive = null;
             this.btn_Min.Location = new System.Drawing.Point(3, 3);
             this.btn_Min.Name = "btn_Min";
@@ -734,7 +817,7 @@
             // 
             this.btn_Max.BackColor = System.Drawing.Color.Transparent;
             this.btn_Max.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Max.Image = ((System.Drawing.Image)(resources.GetObject("btn_Max.Image")));
+            this.btn_Max.Image = global::MusicPlayer.Properties.Resources.maximize_window_100px;
             this.btn_Max.ImageActive = null;
             this.btn_Max.Location = new System.Drawing.Point(97, 3);
             this.btn_Max.Name = "btn_Max";
@@ -749,7 +832,7 @@
             // 
             this.btn_Close.BackColor = System.Drawing.Color.Transparent;
             this.btn_Close.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Close.Image = ((System.Drawing.Image)(resources.GetObject("btn_Close.Image")));
+            this.btn_Close.Image = global::MusicPlayer.Properties.Resources.close_window_100px;
             this.btn_Close.ImageActive = null;
             this.btn_Close.Location = new System.Drawing.Point(194, 3);
             this.btn_Close.Name = "btn_Close";
@@ -884,5 +967,7 @@
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuImageButton pause;
         private System.Windows.Forms.Timer time_song;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_Casi;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_BaiHat;
     }
 }

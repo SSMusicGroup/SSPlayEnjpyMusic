@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayer", "MusicPlayer\MusicPlayer.csproj", "{6B4548D2-7102-4928-BD35-AD8F9163D4E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_BLL", "DAL_BLL\DAL_BLL.csproj", "{7AD17FA5-F106-45D3-9BED-520933B44B33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6B4548D2-7102-4928-BD35-AD8F9163D4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B4548D2-7102-4928-BD35-AD8F9163D4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B4548D2-7102-4928-BD35-AD8F9163D4E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AD17FA5-F106-45D3-9BED-520933B44B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AD17FA5-F106-45D3-9BED-520933B44B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AD17FA5-F106-45D3-9BED-520933B44B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AD17FA5-F106-45D3-9BED-520933B44B33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
