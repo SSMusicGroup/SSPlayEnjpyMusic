@@ -258,6 +258,7 @@ namespace MusicPlayer
                 }
                 Startindex = 0;
                 playfile(0);
+                MessageBox.Show(openFD.SafeFileName);
             }
         }
     }
