@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QLMusic">
+  <DataContextMoniker Name="/QLMusicDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f4687a9b-f523-41d9-af2d-090a8f90c4a9" absoluteBounds="0.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/QLMusicDataContext/PlayList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8905ecad-0209-4198-bec5-6989ba455240" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="098bb13c-adbd-4b0b-8687-00ff0a675db6" absoluteBounds="3.5, 0.875, 2, 1.7708968098958333">
+      <DataClassMoniker Name="/QLMusicDataContext/BaiHat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e263d840-0d56-4c64-80c9-442793189207" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e80bea3-9908-4c57-882b-ac5df3e50dd0" absoluteBounds="0.75, 4.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/QLMusicDataContext/CaSi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ecdc18a9-25c4-4079-9947-89f48ede98b7" absoluteBounds="0.765, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLMusicDataContext/PlayList/PlayList_BaiHat" />
+      <nodes>
+        <classShapeMoniker Id="f4687a9b-f523-41d9-af2d-090a8f90c4a9" />
+        <classShapeMoniker Id="098bb13c-adbd-4b0b-8687-00ff0a675db6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.81814697265625); (4.5 : 4.81814697265625); (4.5 : 2.64589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLMusicDataContext/CaSi/CaSi_BaiHat" />
+      <nodes>
+        <classShapeMoniker Id="3e80bea3-9908-4c57-882b-ac5df3e50dd0" />
+        <classShapeMoniker Id="098bb13c-adbd-4b0b-8687-00ff0a675db6" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

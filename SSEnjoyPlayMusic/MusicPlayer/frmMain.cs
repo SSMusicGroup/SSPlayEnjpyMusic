@@ -51,6 +51,7 @@ namespace MusicPlayer
             playnext = false;
             StopPlayer();
             bunifuSlider1.Value = 100;
+           
         }
 
         public void StopPlayer()
@@ -122,11 +123,11 @@ namespace MusicPlayer
             lbl_AmLuong.Text = bunifuSlider1.Value.ToString();
             if (bunifuSlider1.Value == 0)
             {
-                btn_AmLuong.Image = Image.FromFile(@"D:\\LEARN_IN_CLASS\\SSPlayEnjpyMusic\\Img\\Mute_100px.png");
+                btn_AmLuong.Image = Properties.Resources.Mute_100px;
             }
             else
             {
-                btn_AmLuong.Image = Image.FromFile(@"D:\\LEARN_IN_CLASS\\SSPlayEnjpyMusic\\Img\\audio_100px.png");
+                btn_AmLuong.Image = Properties.Resources.audio_100px;
             }
         }
 
@@ -134,7 +135,7 @@ namespace MusicPlayer
         {
             if (bunifuSlider1.Value > 0)
             {
-                btn_AmLuong.Image = Image.FromFile(@"D:\\LEARN_IN_CLASS\\SSPlayEnjpyMusic\\Img\\No Audio_100px.png");
+                btn_AmLuong.Image = Properties.Resources.No_Audio_100px;
                 axWMP_main.settings.volume = 0;
             }
         }
@@ -213,6 +214,24 @@ namespace MusicPlayer
                 time_song.Stop();
                 PB_Timer.Value = 0;
             }
+        }
+
+        private void PB_Timer_progressChanged(object sender, EventArgs e)
+        {
+            if (axWMP_main.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                
+            }
+        }
+
+        private void btn_Casi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_BaiHat_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void lbox_ListNhac_SelectedIndexChanged(object sender, EventArgs e)
