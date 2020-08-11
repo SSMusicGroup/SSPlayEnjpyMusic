@@ -74,6 +74,7 @@ namespace MusicPlayer
                 axWMP_main.URL = Filepath[playListIndex];
                 axWMP_main.Ctlcontrols.next();
                 axWMP_main.Ctlcontrols.play();
+                MessageBox.Show(Filepath[playListIndex].ToString());
             }
             catch (Exception ex)
             {
@@ -239,7 +240,6 @@ namespace MusicPlayer
                 }
                 Startindex = 0;
                 playfile(0);
-                MessageBox.Show(openFD.SafeFileName);
             }
         }
     }
