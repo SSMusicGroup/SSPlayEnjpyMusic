@@ -27,5 +27,18 @@ namespace DAL_BLL
         {
             return da.BaiHats.Where(k => k.maCaSi == mCS).ToList();
         }
+
+        public void themBaiHat(string tenBH, string pathName)
+        {
+            BaiHat bh = new BaiHat();
+            int count = da.BaiHats.Select(k => k).ToList().Count + 1;
+
+            bh.maBaiHat = "BH00" + count;
+            bh.tenBaiHat = tenBH;
+            bh.pathBaiHat = pathName;
+
+            da.BaiHats.InsertOnSubmit(bh);
+            da.SubmitChanges();
+        }
     }
 }

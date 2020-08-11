@@ -137,7 +137,7 @@
             // 
             this.txt_tenCaSi.Location = new System.Drawing.Point(203, 61);
             this.txt_tenCaSi.Name = "txt_tenCaSi";
-            this.txt_tenCaSi.Size = new System.Drawing.Size(125, 22);
+            this.txt_tenCaSi.Size = new System.Drawing.Size(194, 22);
             this.txt_tenCaSi.TabIndex = 1;
             // 
             // cbo_CaSi

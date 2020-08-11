@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL_BLL;
 
 namespace MusicPlayer
 {
     public partial class frmMain : Form
     {
+        BaiHat_BLL bh_bll = new BaiHat_BLL();
         public frmMain()
         {
             InitializeComponent();
@@ -51,6 +53,7 @@ namespace MusicPlayer
             playnext = false;
             StopPlayer();
             bunifuSlider1.Value = 100;
+            loadMusic();
         }
 
         public void StopPlayer()
@@ -102,7 +105,8 @@ namespace MusicPlayer
 
         private void btn_Close_Click_1(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            Application.ExitThread(); 
+            Application.Exit();
             this.Close();
         }
 
@@ -215,11 +219,23 @@ namespace MusicPlayer
             }
         }
 
+        public void loadMusic()
+        {
+            lbox_ListNhac.DataSource = bh_bll.layDSBaiHat();
+            lbox_ListNhac.DisplayMember = "tenBaiHat";
+            lbox_ListNhac.ValueMember = "maBaiHat";
+        }
+
+        private void btn_BaiHat_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void lbox_ListNhac_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Startindex = lbox_ListNhac.SelectedIndex;
-            playfile(Startindex);
-            lbl_Name_Song.Text = lbox_ListNhac.Text;
+            //Startindex = lbox_ListNhac.SelectedIndex;
+            //playfile(Startindex);
+            //lbl_Name_Song.Text = lbox_ListNhac.Text;
         }
 
         private void btn_Browser_Click(object sender, EventArgs e)
@@ -236,8 +252,12 @@ namespace MusicPlayer
                 for (int i = 0; i <= Filename.Length - 1; i++)
                 {
                     lbox_ListNhac.Items.Add(Filename[i]);
+                    bh_bll.themBaiHat(Filename[i], Filepath[i]);
+                    MessageBox.Show("" + Filename[i]);
+                    MessageBox.Show("" + Filepath[i]);
                 }
                 Startindex = 0;
+                lbl_Name_Song.Text = Filename[0];
                 playfile(0);
             }
         }
