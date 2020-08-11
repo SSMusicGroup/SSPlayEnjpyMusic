@@ -22,5 +22,10 @@ namespace DAL_BLL
             var bh = from t in da.BaiHats where t.maCaSi == maCaSi select new { t.maBaiHat, t.tenBaiHat, t.maCaSi };
             return bh;
         }
+
+        public List<BaiHat> layDSBaiHatTonTai(string mCS)
+        {
+            return da.BaiHats.Where(k => k.maCaSi == mCS).ToList();
+        }
     }
 }

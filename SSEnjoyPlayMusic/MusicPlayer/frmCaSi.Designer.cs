@@ -35,8 +35,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Phat = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_maCaSi = new System.Windows.Forms.TextBox();
             this.txt_tenCaSi = new System.Windows.Forms.TextBox();
+            this.cbo_CaSi = new System.Windows.Forms.ComboBox();
             this.bunifuGradientPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CaSi)).BeginInit();
@@ -94,7 +94,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
             this.tableLayoutPanel2.Controls.Add(this.btn_Phat, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 126);
@@ -122,8 +122,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.txt_maCaSi, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.txt_tenCaSi, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.cbo_CaSi, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -133,19 +133,20 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(801, 117);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // txt_maCaSi
-            // 
-            this.txt_maCaSi.Location = new System.Drawing.Point(203, 3);
-            this.txt_maCaSi.Name = "txt_maCaSi";
-            this.txt_maCaSi.Size = new System.Drawing.Size(125, 22);
-            this.txt_maCaSi.TabIndex = 0;
-            // 
             // txt_tenCaSi
             // 
             this.txt_tenCaSi.Location = new System.Drawing.Point(203, 61);
             this.txt_tenCaSi.Name = "txt_tenCaSi";
             this.txt_tenCaSi.Size = new System.Drawing.Size(125, 22);
             this.txt_tenCaSi.TabIndex = 1;
+            // 
+            // cbo_CaSi
+            // 
+            this.cbo_CaSi.FormattingEnabled = true;
+            this.cbo_CaSi.Location = new System.Drawing.Point(203, 3);
+            this.cbo_CaSi.Name = "cbo_CaSi";
+            this.cbo_CaSi.Size = new System.Drawing.Size(194, 24);
+            this.cbo_CaSi.TabIndex = 2;
             // 
             // frmCaSi
             // 
@@ -175,7 +176,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btn_Phat;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TextBox txt_maCaSi;
         private System.Windows.Forms.TextBox txt_tenCaSi;
+        private System.Windows.Forms.ComboBox cbo_CaSi;
     }
 }

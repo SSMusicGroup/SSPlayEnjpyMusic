@@ -33,8 +33,9 @@ namespace MusicPlayer
             try
             {
                 dgv_CaSi.DataSource = da.layDSCaSi();
+                loadCbo_CaSi();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Lỗi khi load, vui lòng kiểm tra lại dữ liệu");
             }
@@ -45,6 +46,12 @@ namespace MusicPlayer
 
         }
 
+        public void loadCbo_CaSi()
+        {
+            cbo_CaSi.DataSource = da.layDSCaSi();
+            cbo_CaSi.DisplayMember = "tenCaSi";
+            cbo_CaSi.ValueMember = "maCaSi";
+        }
         //public delegate void GETDATA(string data);
         //public GETDATA mydata;
 
@@ -52,18 +59,18 @@ namespace MusicPlayer
         {
             try
             {
-                if (txt_maCaSi.Text == "")
+                if (cbo_CaSi.Text == "")
                 {
                     MessageBox.Show("Vui long chon ma ca si ban can phat");
                 }
                 else
                 {
-                    if (da.check_CaSi(txt_maCaSi.Text))
+                    if (da.check_CaSi(cbo_CaSi.SelectedValue.ToString()))
                     {
                         frmPlayList frm = new frmPlayList();
-                        frm.temp = txt_maCaSi.Text;
+                        frm.temp = cbo_CaSi.SelectedValue.ToString();
                         //mydata(txt_maCaSi.Text);
-                        MessageBox.Show("" + txt_maCaSi.Text);
+                        MessageBox.Show("" + cbo_CaSi.SelectedValue.ToString());
                         frm.ShowDialog();
                     }
                     else
