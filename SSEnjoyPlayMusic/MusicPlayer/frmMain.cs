@@ -126,11 +126,11 @@ namespace MusicPlayer
             lbl_AmLuong.Text = bunifuSlider1.Value.ToString();
             if (bunifuSlider1.Value == 0)
             {
-                btn_AmLuong.Image = Image.FromFile(@"D:\\LEARN_IN_CLASS\\SSPlayEnjpyMusic\\Img\\Mute_100px.png");
+                btn_AmLuong.Image = Properties.Resources.Mute_100px;
             }
             else
             {
-                btn_AmLuong.Image = Image.FromFile(@"D:\\LEARN_IN_CLASS\\SSPlayEnjpyMusic\\Img\\audio_100px.png");
+                btn_AmLuong.Image = Properties.Resources.audio_100px;
             }
         }
 
@@ -138,7 +138,7 @@ namespace MusicPlayer
         {
             if (bunifuSlider1.Value > 0)
             {
-                btn_AmLuong.Image = Image.FromFile(@"D:\\LEARN_IN_CLASS\\SSPlayEnjpyMusic\\Img\\No Audio_100px.png");
+                btn_AmLuong.Image = Properties.Resources.No_Audio_100px;
                 axWMP_main.settings.volume = 0;
             }
         }
@@ -223,7 +223,7 @@ namespace MusicPlayer
         {
             lbox_ListNhac.DataSource = bh_bll.layDSBaiHat();
             lbox_ListNhac.DisplayMember = "tenBaiHat";
-            lbox_ListNhac.ValueMember = "maBaiHat";
+            lbox_ListNhac.ValueMember = "pathBaiHat";
         }
 
         private void btn_BaiHat_Click(object sender, EventArgs e)
@@ -231,11 +231,22 @@ namespace MusicPlayer
             
         }
 
+        private void dgv_baiHat_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void lbox_ListNhac_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Startindex = lbox_ListNhac.SelectedIndex;
-            //playfile(Startindex);
-            //lbl_Name_Song.Text = lbox_ListNhac.Text;
+            Startindex = lbox_ListNhac.SelectedIndex;
+            playfile(Startindex);
+            lbl_Name_Song.Text = lbox_ListNhac.Text;
+            
         }
 
         private void btn_Browser_Click(object sender, EventArgs e)

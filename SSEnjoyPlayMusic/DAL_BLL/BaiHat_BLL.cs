@@ -28,6 +28,11 @@ namespace DAL_BLL
             return da.BaiHats.Where(k => k.maCaSi == mCS).ToList();
         }
 
+        public int laySLBaiHat()
+        {
+            return da.BaiHats.Select(k => k).ToList().Count;
+        }
+
         public void themBaiHat(string tenBH, string pathName)
         {
             BaiHat bh = new BaiHat();

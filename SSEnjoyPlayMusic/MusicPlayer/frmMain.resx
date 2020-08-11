@@ -129,6 +129,18 @@
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pn_menu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFrSURBVChTDc0JThNhAIDR/zbGoKKCCKnIIiIisgipgCIi
+        Iu5GwoWIUSRNofusnbZMp53prF2sGONZPudd4Ind3//Y6l6QjHos+SFzTovphkXCrDJc0bmqS1xScoi9
+        /l+2O33Www4rns+8bTNjmYyfG4wYKoNakctyBrH/6w877R6bQcSq67LQbDBbrzFR0xkty9xQ8wxIp4h3
+        vQteRV2e+QFrLYfFuH0Qt5NVjTG9xJCS5UopjfjQ7fM6bLPleSSdJstx+zBupysKCa3ALfmMa8UU4lOn
+        x5sgZNttsW5bPInbR3E7Y0iMqzluS2muF04QX9od3gY+O67NZtNkrV7hcVVltlxkQs0wVkpxM3+M+BpF
+        vPdddlsNnjdqJM0ySxWZOT3PlHJKonjCcO474iAM+Og57DkWL6wqT881VowS81qWe3KaO4WfjGS/IQ4D
+        j89uk33b5GXdYKOmsFousKCecV9KcTf/g9HMEf8BxT4Y4xh/PSoAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="bunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -146,18 +158,6 @@
         AgAAAAAAAwABAAAACwD//wMAAAAAAAsA//8IAAIAAAAAAAMAMgAAAAsAAAAIAAoAAABuAG8AbgBlAAAA
         CwD//wsAAAALAP//CwD//wsAAAAIAAIAAAAAAAgAAgAAAAAACAACAAAAAAAIAAIAAAAAAAsAAAC4OAAA
         BB4AAAs=
-</value>
-  </data>
-  <data name="pn_menu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFrSURBVChTDc0JThNhAIDR/zbGoKKCCKnIIiIisgipgCIi
-        Iu5GwoWIUSRNofusnbZMp53prF2sGONZPudd4Ind3//Y6l6QjHos+SFzTovphkXCrDJc0bmqS1xScoi9
-        /l+2O33Www4rns+8bTNjmYyfG4wYKoNakctyBrH/6w877R6bQcSq67LQbDBbrzFR0xkty9xQ8wxIp4h3
-        vQteRV2e+QFrLYfFuH0Qt5NVjTG9xJCS5UopjfjQ7fM6bLPleSSdJstx+zBupysKCa3ALfmMa8UU4lOn
-        x5sgZNttsW5bPInbR3E7Y0iMqzluS2muF04QX9od3gY+O67NZtNkrV7hcVVltlxkQs0wVkpxM3+M+BpF
-        vPdddlsNnjdqJM0ySxWZOT3PlHJKonjCcO474iAM+Og57DkWL6wqT881VowS81qWe3KaO4WfjGS/IQ4D
-        j89uk33b5GXdYKOmsFousKCecV9KcTf/g9HMEf8BxT4Y4xh/PSoAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btn_NowPlay.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

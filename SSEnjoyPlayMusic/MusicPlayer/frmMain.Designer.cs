@@ -56,7 +56,6 @@
             this.lbl_AmLuong = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btn_AmLuong = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbox_ListNhac = new System.Windows.Forms.ListBox();
             this.axWMP_main = new AxWMPLib.AxWindowsMediaPlayer();
             this.pn_menu = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -77,6 +76,7 @@
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.time_song = new System.Windows.Forms.Timer(this.components);
+            this.lbox_ListNhac = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -480,21 +480,6 @@
             this.panel1.Size = new System.Drawing.Size(686, 363);
             this.panel1.TabIndex = 3;
             // 
-            // lbox_ListNhac
-            // 
-            this.lbox_ListNhac.BackColor = System.Drawing.Color.Black;
-            this.lbox_ListNhac.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbox_ListNhac.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbox_ListNhac.ForeColor = System.Drawing.Color.White;
-            this.lbox_ListNhac.FormattingEnabled = true;
-            this.lbox_ListNhac.ItemHeight = 20;
-            this.lbox_ListNhac.Location = new System.Drawing.Point(0, 0);
-            this.lbox_ListNhac.MultiColumn = true;
-            this.lbox_ListNhac.Name = "lbox_ListNhac";
-            this.lbox_ListNhac.Size = new System.Drawing.Size(686, 220);
-            this.lbox_ListNhac.TabIndex = 1;
-            this.lbox_ListNhac.SelectedIndexChanged += new System.EventHandler(this.lbox_ListNhac_SelectedIndexChanged);
-            // 
             // axWMP_main
             // 
             this.axWMP_main.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -568,6 +553,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(141, 101);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -871,6 +857,21 @@
             // 
             this.time_song.Tick += new System.EventHandler(this.time_song_Tick);
             // 
+            // lbox_ListNhac
+            // 
+            this.lbox_ListNhac.BackColor = System.Drawing.Color.Black;
+            this.lbox_ListNhac.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbox_ListNhac.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbox_ListNhac.ForeColor = System.Drawing.Color.White;
+            this.lbox_ListNhac.FormattingEnabled = true;
+            this.lbox_ListNhac.ItemHeight = 20;
+            this.lbox_ListNhac.Location = new System.Drawing.Point(0, 0);
+            this.lbox_ListNhac.MultiColumn = true;
+            this.lbox_ListNhac.Name = "lbox_ListNhac";
+            this.lbox_ListNhac.Size = new System.Drawing.Size(686, 220);
+            this.lbox_ListNhac.TabIndex = 1;
+            this.lbox_ListNhac.SelectedIndexChanged += new System.EventHandler(this.lbox_ListNhac_SelectedIndexChanged);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -959,7 +960,6 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton7;
         private System.Windows.Forms.Panel panel1;
         private AxWMPLib.AxWindowsMediaPlayer axWMP_main;
-        private System.Windows.Forms.ListBox lbox_ListNhac;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuImageButton play;
         private System.Windows.Forms.Panel panel2;
@@ -967,5 +967,6 @@
         private System.Windows.Forms.Timer time_song;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Casi;
         private Bunifu.Framework.UI.BunifuFlatButton btn_BaiHat;
+        private System.Windows.Forms.ListBox lbox_ListNhac;
     }
 }
