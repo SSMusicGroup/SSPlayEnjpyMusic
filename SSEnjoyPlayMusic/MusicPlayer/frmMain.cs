@@ -9,40 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL_BLL;
 
-
 namespace MusicPlayer
 {
     public partial class frmMain : Form
     {
+        BaiHat_BLL bh_bll = new BaiHat_BLL();
         public frmMain()
         {
             InitializeComponent();
         }
-        CaSi_BLL daCS = new CaSi_BLL();
-        BaiHat_BLL daBH = new BaiHat_BLL();
-        PlayList_BLL daPL = new PlayList_BLL();
-        string maCS;
         string[] paths, files;
         int Startindex = 0;
         string[] Filename, Filepath;
         Boolean playnext = false;
-        int indexCboCaSi = 0;
 
         bool _playing = false;
-
-        public string MaCaSi
-        {
-            get { return maCS; }
-            set { maCS = value; }
-        }
-
-        public void loadCbo_CaSi()
-        {
-            cbo_CaSi.DataSource = daCS.layDSCaSi();
-            cbo_CaSi.DisplayMember = "tenCaSi";
-            cbo_CaSi.ValueMember = "maCaSi";
-        }
-
 
         public bool isPlaying
         {
@@ -66,20 +47,13 @@ namespace MusicPlayer
             }
         }
 
-        public void load_dsBaiHat()
-        {
-            dgvBaiHat.DataSource = daBH.load_DSBaiHat();
-        }
         private void frmMain_Load(object sender, EventArgs e)
         {
-            load_dsBaiHat();
-            loadCbo_PlayList();
             Startindex = 0;
             playnext = false;
             StopPlayer();
             bunifuSlider1.Value = 100;
-            loadCbo_CaSi();
-            indexCboCaSi++;
+            loadMusic();
         }
 
         public void StopPlayer()
@@ -131,18 +105,19 @@ namespace MusicPlayer
 
         private void btn_Close_Click_1(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            Application.ExitThread(); 
+            Application.Exit();
             this.Close();
         }
 
         private void btn_PlayList_Click(object sender, EventArgs e)
         {
-            gbPLaylist.BringToFront();
+            lbox_ListNhac.BringToFront();
         }
 
         private void btn_NowPlay_Click(object sender, EventArgs e)
         {
-            lbox_ListNhac.BringToFront();
+            axWMP_main.BringToFront();
         }
 
         private void bunifuSlider1_ValueChanged(object sender, EventArgs e)
@@ -151,11 +126,11 @@ namespace MusicPlayer
             lbl_AmLuong.Text = bunifuSlider1.Value.ToString();
             if (bunifuSlider1.Value == 0)
             {
-                btn_AmLuong.Image = Image.FromFile(@"F:\Githud\SSPlayEnjpyMusic\SSEnjoyPlayMusic\MusicPlayer\Image\Mute_100px.png");
+                btn_AmLuong.Image = Properties.Resources.Mute_100px;
             }
             else
             {
-                btn_AmLuong.Image = Image.FromFile(@"F:\Githud\SSPlayEnjpyMusic\SSEnjoyPlayMusic\MusicPlayer\Image\audio_100px.png");
+                btn_AmLuong.Image = Properties.Resources.audio_100px;
             }
         }
 
@@ -163,7 +138,7 @@ namespace MusicPlayer
         {
             if (bunifuSlider1.Value > 0)
             {
-                btn_AmLuong.Image = Image.FromFile(@"F:\Githud\SSPlayEnjpyMusic\SSEnjoyPlayMusic\MusicPlayer\Image\No Audio_100px.png");
+                btn_AmLuong.Image = Properties.Resources.No_Audio_100px;
                 axWMP_main.settings.volume = 0;
             }
         }
@@ -244,88 +219,34 @@ namespace MusicPlayer
             }
         }
 
-        private void cbo_CaSi_SelectedIndexChanged(object sender, EventArgs e)
+        public void loadMusic()
         {
-            if (indexCboCaSi > 0)
-            {
-                dgvCaSi.DataSource = daCS.layDSBaiHatByCaSi(cbo_CaSi.SelectedValue.ToString());
-            }
-        }
-
-        private void dgvCaSi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btn_Casi_Click(object sender, EventArgs e)
-        {
-            gbCaSi.BringToFront();
+            lbox_ListNhac.DataSource = bh_bll.layDSBaiHat();
+            lbox_ListNhac.DisplayMember = "tenBaiHat";
+            lbox_ListNhac.ValueMember = "pathBaiHat";
         }
 
         private void btn_BaiHat_Click(object sender, EventArgs e)
         {
-            gbBaihat.BringToFront();
+            
         }
 
-        private void dgvBaiHat_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgv_baiHat_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.Button == MouseButtons.Right)
-            {
-                ContextMenuStrip baihat_menu = new System.Windows.Forms.ContextMenuStrip();
-                int position_xy_mouse_row = dgvBaiHat.HitTest(e.X, e.Y).RowIndex;
-                if(position_xy_mouse_row >= 0)
-                {
-                    baihat_menu.Items.Add("Thêm tên ca sĩ").Name = "menu_item_them_ten_ca_si";
-                    baihat_menu.Items.Add("Thêm vào playlist").Name = "menu_item_them_vao_play_list";
-                }
-                baihat_menu.Show(dgvBaiHat,new Point(e.X,e.Y));
-                baihat_menu.ItemClicked += Baihat_menu_ItemClicked;
 
-            }
         }
 
-        private void Baihat_menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
-            MessageBox.Show(e.ClickedItem.Name.ToString());
-            switch(e.ClickedItem.Name.ToString())
-            {
-                case "menu_item_them_ten_ca_si":
-                    break;
-                case "menu_item_them_vao_play_list":
-                    break;
-            }
-        }
 
-        private void lbox_ListNhac_MouseClick(object sender, MouseEventArgs e)
-        {
-            Startindex = lbox_ListNhac.SelectedIndex;
-            playfile(Startindex);
-            lbl_Name_Song.Text = lbox_ListNhac.Text;
-        }
-
-        private void cboPlayList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dgvPlaylist.DataSource = daPL.getDSBaiHatCuaPLaylist(cboPlayList.SelectedValue.ToString());
-        }
-
-        public void loadCbo_PlayList()
-        {
-            cboPlayList.DataSource = daPL.layDSPlayList();
-            cboPlayList.DisplayMember = "tenPlayList";
-            cboPlayList.ValueMember = "maPlayList";
-        }
-
-        private void cboPlayList_SelectedValueChanged(object sender, EventArgs e)
-        {
-            dgvPlaylist.DataSource = daPL.getDSBaiHatCuaPLaylist(cboPlayList.SelectedValue.ToString());          
         }
 
         private void lbox_ListNhac_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Startindex = lbox_ListNhac.SelectedIndex;
-            //playfile(Startindex);
-            //lbl_Name_Song.Text = lbox_ListNhac.Text;
+            Startindex = lbox_ListNhac.SelectedIndex;
+            playfile(Startindex);
+            lbl_Name_Song.Text = lbox_ListNhac.Text;
+            
         }
 
         private void btn_Browser_Click(object sender, EventArgs e)
@@ -341,20 +262,14 @@ namespace MusicPlayer
                 Filepath = openFD.FileNames;
                 for (int i = 0; i <= Filename.Length - 1; i++)
                 {
-                    try
-                    {
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                        MessageBox.Show("Bài hát chứa ký tự đặc biệt, không thể lưu trữ.");
-                    }               
                     lbox_ListNhac.Items.Add(Filename[i]);
+                    bh_bll.themBaiHat(Filename[i], Filepath[i]);
+                    MessageBox.Show("" + Filename[i]);
+                    MessageBox.Show("" + Filepath[i]);
                 }
                 Startindex = 0;
+                lbl_Name_Song.Text = Filename[0];
                 playfile(0);
-                
             }
         }
     }

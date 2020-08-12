@@ -16,14 +16,10 @@ namespace DAL_BLL
         {
             return da.BaiHats.Select(k => k).ToList();
         }
-        public IQueryable load_DSBaiHat()
-        {
-            var ds = from a in da.BaiHats join b in da.CaSis on a.maCaSi equals b.maCaSi select new {a.tenBaiHat, b.tenCaSi };
-            return ds;
-        }
+
         public IQueryable layDSBaiHatByCaSi(string maCaSi)
         {
-            var bh = from t in da.BaiHats where t.maCaSi == maCaSi select new { t.tenBaiHat};
+            var bh = from t in da.BaiHats where t.maCaSi == maCaSi select new { t.maBaiHat, t.tenBaiHat, t.maCaSi };
             return bh;
         }
 
@@ -31,26 +27,23 @@ namespace DAL_BLL
         {
             return da.BaiHats.Where(k => k.maCaSi == mCS).ToList();
         }
-        public void themBaiHat(string maBH, string tenBH, string maCaSi, string pathBH)
+
+        public int laySLBaiHat()
+        {
+            return da.BaiHats.Select(k => k).ToList().Count;
+        }
+
+        public void themBaiHat(string tenBH, string pathName)
         {
             BaiHat bh = new BaiHat();
-            bh.maBaiHat = maBH;
-            bh.maCaSi = maCaSi;
+            int count = da.BaiHats.Select(k => k).ToList().Count + 1;
+
+            bh.maBaiHat = "BH00" + count;
             bh.tenBaiHat = tenBH;
-            bh.pathBaiHat = pathBH;
+            bh.pathBaiHat = pathName;
 
             da.BaiHats.InsertOnSubmit(bh);
             da.SubmitChanges();
-        }
-        public string getMaBHMax()
-        {
-            BaiHat bh = da.BaiHats.ToList().OrderByDescending(t => t.maBaiHat).First();
-            return bh.maBaiHat;
-        }
-        public string getMaCSMax()
-        {
-            CaSi bh = da.CaSis.ToList().OrderByDescending(t => t.maCaSi).First();
-            return bh.maCaSi;
         }
     }
 }
