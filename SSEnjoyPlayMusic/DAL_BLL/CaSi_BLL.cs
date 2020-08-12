@@ -11,12 +11,12 @@ namespace DAL_BLL
         QLMusicDataContext da = new QLMusicDataContext();
         public CaSi_BLL() { }
 
-        public List<CaSi> layDSCaSi()
+        public List<CaSi> getDSCaSi()
         {
             return da.CaSis.Select(k => k).ToList();
         }
 
-        public IQueryable layDSBaiHatByCaSi(string maCaSi)
+        public IQueryable getDSBaiHatByCaSi(string maCaSi)
         {
             var bh = from t in da.BaiHats where t.maCaSi == maCaSi select new { t.tenBaiHat };
             return bh;

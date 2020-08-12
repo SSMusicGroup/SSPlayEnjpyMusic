@@ -12,14 +12,14 @@ namespace DAL_BLL
 
         public PlayList_BLL() { }
 
-        public List<Playlist> layDSPlayList()
+        public List<Playlist> getDSPlayList()
         {
             return da.Playlists.Select(k => k).ToList();
         }
 
         public IQueryable getDSBaiHatCuaPLaylist(string maPlaylist)
         {
-            var ds = from a in da.BaiHatVaPlayLists join b in da.BaiHats on a.maBaiHat equals b.maBaiHat where a.maPlayList == maPlaylist select new { b.tenBaiHat};
+            var ds = from a in da.BaiHatVaPlayLists join b in da.BaiHats on a.maBaiHat equals b.maBaiHat where a.maPlaylist == maPlaylist select new { b.tenBaiHat};
             return ds;
         }
     }

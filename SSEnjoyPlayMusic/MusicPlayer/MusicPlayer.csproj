@@ -36,19 +36,13 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
-    <Reference Include="DAL_BLL">
+    <Reference Include="DAL_BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DAL_BLL\bin\Debug\DAL_BLL.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,36 +55,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCaSi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCaSi.Designer.cs">
-      <DependentUpon>frmCaSi.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPlayList.cs">
+    <Compile Include="MediaTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPlayList.Designer.cs">
-      <DependentUpon>frmPlayList.cs</DependentUpon>
+    <Compile Include="MediaTest.Designer.cs">
+      <DependentUpon>MediaTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCaSi.resx">
-      <DependentUpon>frmCaSi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPlayList.resx">
-      <DependentUpon>frmPlayList.cs</DependentUpon>
+    <EmbeddedResource Include="MediaTest.resx">
+      <DependentUpon>MediaTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -153,6 +137,7 @@
     <Content Include="Image\Mute_100px.png" />
     <Content Include="Image\next.png" />
     <Content Include="Image\No Audio_100px.png" />
+    <Content Include="Image\not_repeat100px.png" />
     <Content Include="Image\ok_48px.png" />
     <Content Include="Image\pause_100px.png" />
     <Content Include="Image\play_100px.png" />

@@ -7,7 +7,6 @@
       <Column Name="maCaSi" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="pathBaiHat" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
       <Association Name="BaiHat_BaiHatVaPlayList" Member="BaiHatVaPlayLists" ThisKey="maBaiHat" OtherKey="maBaiHat" Type="BaiHatVaPlayList" />
-      <Association Name="CaSi_BaiHat" Member="CaSi" ThisKey="maCaSi" OtherKey="maCaSi" Type="CaSi" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Playlist" Member="Playlists">
@@ -29,7 +28,6 @@
     <Type Name="CaSi">
       <Column Name="maCaSi" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenCaSi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="CaSi_BaiHat" Member="BaiHats" ThisKey="maCaSi" OtherKey="maCaSi" Type="BaiHat" />
     </Type>
   </Table>
 </Database>
