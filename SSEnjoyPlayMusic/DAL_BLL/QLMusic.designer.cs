@@ -123,8 +123,6 @@ namespace DAL_BLL
 		
 		private EntitySet<BaiHatVaPlayList> _BaiHatVaPlayLists;
 		
-		private EntityRef<CaSi> _CaSi;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -142,7 +140,6 @@ namespace DAL_BLL
 		public BaiHat()
 		{
 			this._BaiHatVaPlayLists = new EntitySet<BaiHatVaPlayList>(new Action<BaiHatVaPlayList>(this.attach_BaiHatVaPlayLists), new Action<BaiHatVaPlayList>(this.detach_BaiHatVaPlayLists));
-			this._CaSi = default(EntityRef<CaSi>);
 			OnCreated();
 		}
 		
@@ -197,10 +194,6 @@ namespace DAL_BLL
 			{
 				if ((this._maCaSi != value))
 				{
-					if (this._CaSi.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnmaCaSiChanging(value);
 					this.SendPropertyChanging();
 					this._maCaSi = value;
@@ -240,40 +233,6 @@ namespace DAL_BLL
 			set
 			{
 				this._BaiHatVaPlayLists.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CaSi_BaiHat", Storage="_CaSi", ThisKey="maCaSi", OtherKey="maCaSi", IsForeignKey=true)]
-		public CaSi CaSi
-		{
-			get
-			{
-				return this._CaSi.Entity;
-			}
-			set
-			{
-				CaSi previousValue = this._CaSi.Entity;
-				if (((previousValue != value) 
-							|| (this._CaSi.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CaSi.Entity = null;
-						previousValue.BaiHats.Remove(this);
-					}
-					this._CaSi.Entity = value;
-					if ((value != null))
-					{
-						value.BaiHats.Add(this);
-						this._maCaSi = value.maCaSi;
-					}
-					else
-					{
-						this._maCaSi = default(string);
-					}
-					this.SendPropertyChanged("CaSi");
-				}
 			}
 		}
 		
@@ -602,8 +561,6 @@ namespace DAL_BLL
 		
 		private string _tenCaSi;
 		
-		private EntitySet<BaiHat> _BaiHats;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -616,7 +573,6 @@ namespace DAL_BLL
 		
 		public CaSi()
 		{
-			this._BaiHats = new EntitySet<BaiHat>(new Action<BaiHat>(this.attach_BaiHats), new Action<BaiHat>(this.detach_BaiHats));
 			OnCreated();
 		}
 		
@@ -660,19 +616,6 @@ namespace DAL_BLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CaSi_BaiHat", Storage="_BaiHats", ThisKey="maCaSi", OtherKey="maCaSi")]
-		public EntitySet<BaiHat> BaiHats
-		{
-			get
-			{
-				return this._BaiHats;
-			}
-			set
-			{
-				this._BaiHats.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -691,18 +634,6 @@ namespace DAL_BLL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_BaiHats(BaiHat entity)
-		{
-			this.SendPropertyChanging();
-			entity.CaSi = this;
-		}
-		
-		private void detach_BaiHats(BaiHat entity)
-		{
-			this.SendPropertyChanging();
-			entity.CaSi = null;
 		}
 	}
 }
