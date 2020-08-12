@@ -21,6 +21,12 @@ namespace MusicPlayer
         CaSi_BLL daCS = new CaSi_BLL();
         BaiHat_BLL daBH = new BaiHat_BLL();
         PlayList_BLL daPL = new PlayList_BLL();
+<<<<<<< HEAD
+=======
+
+        ContextMenuStrip cms_CaSi = new ContextMenuStrip();
+
+>>>>>>> 910726258bfa81cd36e2bc3ac63a20df6f947ea4
         string maCS;
         string[] paths, files;
         int Startindex = 0;
@@ -300,6 +306,72 @@ namespace MusicPlayer
             Startindex = lbox_ListNhac.SelectedIndex;
             playfile(Startindex);
             lbl_Name_Song.Text = lbox_ListNhac.Text;
+<<<<<<< HEAD
+=======
+        }
+
+        private void cboPlayList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvPlaylist.DataSource = daPL.getDSBaiHatCuaPLaylist(cboPlayList.SelectedValue.ToString());
+        }
+
+        public void loadCbo_PlayList()
+        {
+            cboPlayList.DataSource = daPL.getDSPlayList();
+            cboPlayList.DisplayMember = "tenPlayList";
+            cboPlayList.ValueMember = "maPlayList";
+        }
+
+        private void cboPlayList_SelectedValueChanged(object sender, EventArgs e)
+        {
+            dgvPlaylist.DataSource = daPL.getDSBaiHatCuaPLaylist(cboPlayList.SelectedValue.ToString());          
+        }
+
+        private void dgvBaiHat_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string m = dgvBaiHat.SelectedCells[0].Value.ToString();
+            lbox_ListNhac.Items.Clear();
+            lbox_ListNhac.Items.Add(m);
+            //Filepath = daBH.getPathBaiHat(m);
+        }
+
+
+
+        private void ct_Menu_CaSi_Them_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Them_CaSi_Click(object sender, EventArgs e)
+        {
+            if (daCS.check_CaSi_DaTonTai(txt_CaSi_Them.Text) == false)
+            {
+                daCS.addCaSi(txt_CaSi_Them.Text);
+                MessageBox.Show("Thêm tên ca sĩ thành công");
+                cbo_CaSi.Refresh();
+                cbo_CaSi.DataSource = daCS.getDSCaSi();
+                txt_CaSi_Them.Text = "";
+            }
+        }
+
+        private void btn_Them_PlayList_Click(object sender, EventArgs e)
+        {
+            if (daPL.check_PlayList_DaTonTai(txt_PlayList_Them.Text) == false)
+            {
+                daPL.addPlayList(txt_PlayList_Them.Text);
+                MessageBox.Show("Thêm tên PlayList thành công");
+                cboPlayList.Refresh();
+                cboPlayList.DataSource = daPL.getDSPlayList();
+                txt_PlayList_Them.Text = "";
+            }
+        }
+
+        private void lbox_ListNhac_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Startindex = lbox_ListNhac.SelectedIndex;
+            //playfile(Startindex);
+            //lbl_Name_Song.Text = lbox_ListNhac.Text;
+>>>>>>> 910726258bfa81cd36e2bc3ac63a20df6f947ea4
         }
 
         private void cboPlayList_SelectedIndexChanged(object sender, EventArgs e)
@@ -530,6 +602,7 @@ namespace MusicPlayer
                 Filepath = openFD.FileNames;
 
                 for (int i = 0; i <= Filename.Length - 1; i++)
+<<<<<<< HEAD
                 {
                     try
                     {
@@ -537,11 +610,28 @@ namespace MusicPlayer
                         {
                             daBH.setBaiHat(Filename[i], Filepath[i]);
                         }
+=======
+                {                  
+                    try
+                    {
+                        if (daBH.KtraTonTaiBaiHat(Filename[i]) == false)
+                        {
+                            daBH.setBaiHat(Filename[i], Filepath[i]);
+                        }
+                        //else
+                        //{
+                        //    MessageBox.Show("Bài hát đã tồn tại");
+                        //} 
+>>>>>>> 910726258bfa81cd36e2bc3ac63a20df6f947ea4
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Bài hát chứa ký tự đặc biệt, không thể lưu trữ.");
+<<<<<<< HEAD
                     }
+=======
+                    }               
+>>>>>>> 910726258bfa81cd36e2bc3ac63a20df6f947ea4
                     lbox_ListNhac.Items.Add(Filename[i]);
                 }
                 dgvBaiHat.Refresh();
