@@ -29,5 +29,23 @@ namespace DAL_BLL
             }
             return true;
         }
+
+        public bool check_CaSi_DaTonTai(string tenCS)
+        {
+            if (da.CaSis.Where(t => t.tenCaSi == tenCS).FirstOrDefault() == null)
+                return false;
+            return true;
+        }
+
+        public void addCaSi(string tenCS)
+        {
+            CaSi cs = new CaSi();
+            int count = da.CaSis.Select(k => k).ToList().Count + 1;
+            cs.maCaSi = "CS00" + count;
+            cs.tenCaSi = tenCS;
+
+            da.CaSis.InsertOnSubmit(cs);
+            da.SubmitChanges();
+        }
     }
 }

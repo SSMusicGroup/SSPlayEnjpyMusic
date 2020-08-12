@@ -40,6 +40,10 @@ namespace DAL_BLL
                 return false;
             return true;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 910726258bfa81cd36e2bc3ac63a20df6f947ea4
         public string getPathBaiHat(string tenBH)
         {
             BaiHat bh = da.BaiHats.Where(t => t.tenBaiHat == tenBH).FirstOrDefault();
