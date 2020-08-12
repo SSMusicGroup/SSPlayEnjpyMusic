@@ -72,6 +72,12 @@
     <Compile Include="frmPlayList.Designer.cs">
       <DependentUpon>frmPlayList.cs</DependentUpon>
     </Compile>
+    <Compile Include="MediaTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MediaTest.Designer.cs">
+      <DependentUpon>MediaTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCaSi.resx">
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlayList.resx">
       <DependentUpon>frmPlayList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MediaTest.resx">
+      <DependentUpon>MediaTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

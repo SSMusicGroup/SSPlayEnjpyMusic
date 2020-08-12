@@ -18,10 +18,9 @@ namespace DAL_BLL
 
         public IQueryable layDSBaiHatByCaSi(string maCaSi)
         {
-            var bh = from t in da.BaiHats where t.maCaSi == maCaSi select new { t.maBaiHat, t.tenBaiHat, t.maCaSi };
+            var bh = from t in da.BaiHats where t.maCaSi == maCaSi select new { t.tenBaiHat };
             return bh;
         }
-
         public bool check_CaSi(string maCaSi)
         {
             if ((da.BaiHats.Where(k => k.maCaSi == maCaSi).FirstOrDefault()) == null)
